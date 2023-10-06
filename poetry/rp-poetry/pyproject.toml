@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "rp-poetry"
+version = "0.1.0"
+description = ""
+authors = ["Laura Fuentes <laura.fuentes@newstreetresearch.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
