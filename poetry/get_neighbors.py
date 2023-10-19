@@ -1,5 +1,6 @@
 import numpy as np
 
+
 train = np.loadtxt('data\synth_train.txt')  
 class_train = train[:,0]
 x_train = train[:,1:]
