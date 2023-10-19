@@ -24,8 +24,5 @@ jobs:
       - name: Install Poetry Action
         uses: snok/install-poetry@v1.3.4
 
-      - name: Install dependencies
-        run: poetry install --no-root
-
       - name: Run pytest
         run: poetry run pytest
