@@ -1,0 +1,28 @@
+name: Run pytest with Poetry
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install Poetry Action
+        uses: snok/install-poetry@v1.3.4
+
+      - name: Run pytest
+        run: poetry run pytest
