@@ -1,12 +1,12 @@
 import numpy as np
 
-train = np.loadtxt('data/synth_train.txt')  
+train = np.loadtxt('data\synth_train.txt')  
 class_train = train[:,0]
 x_train = train[:,1:]
 N_train = train.shape[0]
 
 # load the test set
-test = np.loadtxt('data/synth_test.txt') 
+test = np.loadtxt('data\synth_test.txt') 
 class_test_1 = test[test[:,0]==1]
 class_test_2 = test[test[:,0]==2]
 x_test = test[:,1:]
@@ -23,8 +23,7 @@ def get_neighbors(train, test_row, num_neighbors):
 	neighbors = list()
 	for i in range(num_neighbors):
 		neighbors.append(distances[i][0])
+	
+	print(neighbors)
+	
 	return neighbors
-
-
-#neighbors = get_neighbors(x_train, x_train[0], 3)
-
