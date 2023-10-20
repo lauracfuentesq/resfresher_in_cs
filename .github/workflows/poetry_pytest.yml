@@ -45,9 +45,13 @@ jobs:
       - name: Coverage Badge
         uses: tj-actions/coverage-badge-py@v2
 
-      - name: Commit and push coverage badge
+      - name: Commit files
         run: |
-          git checkout $GITHUB_REF
-          git add coverage.svg
-          git commit -m "Update coverage badge"
-          git push
+          git config --local lauracarolinafuentesquintero@gmail.com
+          git config --local lauracfuentesq
+          git commit -a -m "Add changes"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
