@@ -1,4 +1,4 @@
-from get_neighbors import get_neighbors
+from rp_poetry.get_neighbors import get_neighbors
 import numpy as np
 
 x = np.loadtxt('data/synth_train.txt')
@@ -15,3 +15,5 @@ def test_can_we_do_something():
 
     # Test case 4: Check if the number of neighbors returned is equal to the total number of data points
     assert len(get_neighbors(x, x[3], x.shape[0])) == x.shape[0]
+
+
