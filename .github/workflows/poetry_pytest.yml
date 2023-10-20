@@ -47,8 +47,8 @@ jobs:
 
       - name: Commit files
         run: |
-          git config --local lauracarolinafuentesquintero@gmail.com
-          git config --local lauracfuentesq
+          git config user.email --local lauracarolinafuentesquintero@gmail.com
+          git config user.name --local lauracfuentesq
           git commit -a -m "Add changes"
       - name: Push changes
         uses: ad-m/github-push-action@master
