@@ -29,7 +29,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install poetry
           poetry install --no-root
+          poetry run pip install coverage
 
       - name: Run pytest
         run: |
           poetry run pytest
+
+      - name: Run pytest with coverage
+        run: |
+          poetry run coverage run -m pytest
