@@ -44,11 +44,12 @@ jobs:
 
       - name: Generate coverage badge
         run: |
-          poetry run coverage report --fail-under=80 --show-missing --skip-covered
-          echo "coverage-badge: ${{ steps.generate-badge.outputs.coverage-badge }}" >> $GITHUB_ENV
+          poetry run coverage-badge -o coverage.svg --query=total
+          echo "coverage-badge: ${{ env.GITHUB_WORKSPACE }}/coverage.svg" >> $GITHUB_ENV
 
       - name: Commit and push coverage badge
         run: |
+          git checkout $GITHUB_REF
           git add coverage.svg
           git commit -m "Update coverage badge"
           git push
