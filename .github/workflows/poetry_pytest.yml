@@ -1,4 +1,4 @@
-name: Run pytest with Poetry
+name: Run pytest with Poetry and Coverage
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install Poetry Action
-        uses: snok/install-poetry@v1.3.4        
+        uses: snok/install-poetry@v1.3.4
 
       - name: Install dependencies
         run: |
@@ -31,13 +31,10 @@ jobs:
           poetry install --no-root
           poetry run pip install coverage
 
-      - name: Run pytest
-        run: |
-          poetry run pytest
-
       - name: Run pytest with coverage
         run: |
           poetry run coverage run -m pytest
+          poetry run coverage html
 
       - name: Publish coverage report
         uses: actions/upload-artifact@v2
