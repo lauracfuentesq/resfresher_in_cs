@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.email --local lauracarolinafuentesquintero@gmail.com
           git config user.name --local lauracfuentesq
-          git pull origin main
+          git pull 
           git add coverage.svg
           git commit -a -m "Add changes"
       - name: Push changes
