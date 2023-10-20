@@ -45,10 +45,16 @@ jobs:
       - name: Coverage Badge
         uses: tj-actions/coverage-badge-py@v2
 
+      - name: Generate coverage badge
+        run: |
+            poetry run coverage-badge -o coverage.svg --query=total
+            echo "coverage-badge: ${{ github.workspace }}/coverage.svg" >> $GITHUB_ENV
+
       - name: Commit files
         run: |
           git config user.email --local lauracarolinafuentesquintero@gmail.com
           git config user.name --local lauracfuentesq
+          git add coverage.svg
           git commit -a -m "Add changes"
       - name: Push changes
         uses: ad-m/github-push-action@master
