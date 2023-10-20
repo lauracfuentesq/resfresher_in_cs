@@ -50,9 +50,17 @@ jobs:
           git config user.email lauracarolinafuentesquintero@gmail.com
           git config user.name lauracfuentesq
 
-      - name: Pull changes
+      - name: Stash changes
+        run: |
+          git stash
+
+      - name: Pull changes with rebase
         run: |
           git pull origin main --rebase
+
+      - name: Apply stashed changes
+        run: |
+          git stash apply
 
       - name: Commit files
         run: |
