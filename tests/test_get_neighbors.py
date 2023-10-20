@@ -1,7 +1,7 @@
 from rp_poetry.get_neighbors import get_neighbors
 import numpy as np
 
-x = np.loadtxt('../rp_poetry/data/synth_train.txt')
+x = np.loadtxt('rp_poetry/data/synth_train.txt')
 
 def test_can_we_do_something():
     # Test case 1: Check if the number of neighbors returned is equal to 3
