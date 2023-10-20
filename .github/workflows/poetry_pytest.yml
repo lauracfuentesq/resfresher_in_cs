@@ -45,14 +45,20 @@ jobs:
       - name: Coverage Badge
         uses: tj-actions/coverage-badge-py@v2
 
+      - name: Configure Git
+        run: |
+          git config user.email lauracarolinafuentesquintero@gmail.com
+          git config user.name lauracfuentesq
+
+      - name: Pull changes
+        run: |
+          git pull origin main --rebase
+
       - name: Commit files
         run: |
-          git config user.email --local lauracarolinafuentesquintero@gmail.com
-          git config user.name --local lauracfuentesq
-          git pull origin master
           git add coverage.svg
           git commit -a -m "Add changes"
 
       - name: Push changes
         run: |
-          git push origin HEAD:master
+          git push origin HEAD:main
